@@ -1,0 +1,67 @@
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+}
+body {
+    background: #485563;
+    background: -webkit-linear-gradient(to right, #29323c, #485563);
+    background: linear-gradient(to right, #29323c, #485563);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.kinentic{
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.kinentic::after,
+.kinentic::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 0;
+    top: 0;
+    border: 50px solid transparent;
+    border-bottom-color: #fff;
+    animation: rotateA 2s linear infinite 0.5s;
+}
+.kinentic::before{
+    transform: rotate(90deg);
+    animation: rotateB 2s linear infinite;
+}
+
+@keyframes rotateA {
+    0%,
+    25% {
+        transform: rotate(0deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateB {
+    0%,
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(450deg);
+    }
+}
